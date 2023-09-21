@@ -2,4 +2,4 @@
 ## Ingeniería Web: Visión General (IWVG) DevOps
 
 ### Estado del código
-[![DevOps](https://github.com/alu0101320489/iwvg-devops-Hernandez-Daniel/blob/develop/.github/workflows/maven.yml/badge.svg)](https://github.com/alu0101320489/iwvg-devops-Hernandez-Daniel/blob/develop/.github/workflows/maven.yml)
+[![Build](https://github.com/alu0101320489/iwvg-devops-Hernandez-Daniel/actions/workflows/maven.yml/badge.svg)](https://github.com/alu0101320489/iwvg-devops-Hernandez-Daniel/actions/workflows/maven.yml)

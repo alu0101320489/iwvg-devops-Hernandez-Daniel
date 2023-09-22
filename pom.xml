@@ -12,7 +12,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>iwvg-devops-Hernández-Daniel</artifactId>
+    <artifactId>iwvg-devops-Hernandez-Daniel</artifactId>
     <groupId>es.upm.miw</groupId>
     <version>4.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -28,6 +28,8 @@
     </licenses>
 
     <properties>
+	<sonar.organization>alu0101320489</sonar.organization>
+  	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <!-- Encode -->
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>

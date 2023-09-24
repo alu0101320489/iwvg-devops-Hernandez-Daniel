@@ -14,7 +14,6 @@ public class UserTest {
 
     @BeforeEach
     void setUp() {
-        // Create a new User object before each test
         user = new User("1", "Daniel", "Hernandez", new ArrayList<>());
     }
 
@@ -66,17 +65,20 @@ public class UserTest {
         List<Fraction> newFractions = new ArrayList<>();
         newFractions.add(new Fraction(1, 2));
         user.setFractions(newFractions);
-        assertEquals(new Fraction(1, 2), user.getFractions().get(0));
+        assertEquals(1, user.getFractions().get(0).getNumerator());
+        assertEquals(2, user.getFractions().get(0).getDenominator());
     }
 
     @Test
     void testAddFraction() {
         Fraction fraction = new Fraction(1, 3);
-        Fraction fraction2 = new Fraction(2, 3);
+        Fraction fraction2 = new Fraction(2, 5);
         user.addFraction(fraction);
+        assertEquals(1, user.getFractions().get(0).getNumerator());
+        assertEquals(3, user.getFractions().get(0).getDenominator());
         user.addFraction(fraction2);
-        assertEquals(new Fraction(1, 3), user.getFractions().get(0));
-        assertEquals(new Fraction(2, 3), user.getFractions().get(1));
+        assertEquals(2, user.getFractions().get(1).getNumerator());
+        assertEquals(5, user.getFractions().get(1).getDenominator());
     }
 
     @Test

@@ -96,6 +96,15 @@ public class FractionTest {
     }
 
     @Test
+    void testSubstract() {
+        Fraction fraction1 = new Fraction(2, 4);
+        Fraction fraction2 = new Fraction(1, 4);
+        Fraction result = fraction1.subtract(fraction2);
+        assertEquals(4, result.getNumerator());
+        assertEquals(16, result.getDenominator());
+    }
+
+    @Test
     void testMultiply() {
         Fraction fraction1 = new Fraction(1, 2);
         Fraction fraction2 = new Fraction(3, 4);

@@ -89,4 +89,9 @@ public class Fraction {
     public Fraction divide(Fraction otherFraction) {
         return new Fraction(this.numerator * otherFraction.getDenominator(), this.denominator * otherFraction.getNumerator());
     }
+
+    public Fraction subtract(Fraction otherFraction) {
+        int commonDenominator = this.denominator * otherFraction.getDenominator();
+        return new Fraction(this.numerator * otherFraction.getDenominator() - otherFraction.getNumerator() * this.denominator, commonDenominator);
+    }
 }

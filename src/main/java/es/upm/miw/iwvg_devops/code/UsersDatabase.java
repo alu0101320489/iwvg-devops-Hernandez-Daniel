@@ -1,6 +1,7 @@
 package es.upm.miw.iwvg_devops.code;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class UsersDatabase {
@@ -48,5 +49,12 @@ public class UsersDatabase {
                 new User("5", "Antonio", "Blanco", fractions5),
                 new User("6", "Paula", "Torres", fractions6)
         );
+    }
+
+    public Optional<Fraction> findFractionSubtractionByUserName(String name) {
+        return findAll()
+                .filter(user -> user.getName().equals(name))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce((fraction1, fraction2) -> fraction1.subtract(fraction2));
     }
 }

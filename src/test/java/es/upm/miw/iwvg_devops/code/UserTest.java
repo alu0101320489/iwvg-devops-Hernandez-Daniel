@@ -18,6 +18,13 @@ public class UserTest {
     }
 
     @Test
+    void testConstructor() {
+        User user2 = new User("33", "Fernando", "Alonso", new ArrayList<>());
+        assertEquals("33", user2.getId());
+        assertEquals("Fernando", user2.getName());
+        assertEquals("Alonso", user2.getFamilyName());
+    }
+    @Test
     void testGetId() {
         assertEquals("1", user.getId());
     }

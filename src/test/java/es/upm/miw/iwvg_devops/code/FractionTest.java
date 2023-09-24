@@ -96,7 +96,7 @@ public class FractionTest {
     }
 
     @Test
-    void testSubstract() {
+    void testSubtract() {
         Fraction fraction1 = new Fraction(2, 4);
         Fraction fraction2 = new Fraction(1, 4);
         Fraction result = fraction1.subtract(fraction2);
@@ -121,4 +121,5 @@ public class FractionTest {
         assertEquals(3, result.getNumerator());
         assertEquals(4, result.getDenominator());
     }
+
 }

@@ -35,4 +35,14 @@ public class UsersDatabaseTest {
         List<Double> expectedDecimalValues = List.of(2.0, 1.3333333333333333);
         assertEquals(expectedDecimalValues, decimalValues);
     }
+
+    @Test
+    void testFindUserFamilyNameByAllNegativeSignFractionDistinct() {
+        UsersDatabase database = new UsersDatabase();
+        List<String> familyNames = database.findUserFamilyNameByAllNegativeSignFractionDistinct()
+                .collect(Collectors.toList());
+
+        List<String> expectedFamilyNames = List.of();
+        assertEquals(expectedFamilyNames, familyNames);
+    }
 }

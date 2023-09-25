@@ -61,6 +61,7 @@ public class UsersDatabase {
     public Stream<String> findUserFamilyNameBySomeImproperFraction() {
         return findAll()
                 .filter(user -> user.getFractions().stream().anyMatch(Fraction::isImproper))
-                .map(User::getFamilyName);
+                .map(User::getFamilyName)
+                .distinct();
     }
 }

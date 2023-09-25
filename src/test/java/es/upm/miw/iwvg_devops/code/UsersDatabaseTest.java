@@ -25,4 +25,14 @@ public class UsersDatabaseTest {
         List<String> expectedFamilyNames = List.of("Fernandez", "Blanco", "López", "Torres");
         assertEquals(expectedFamilyNames, familyNames);
     }
+
+    @Test
+    void testFindDecimalImproperFractionByUserName() {
+        UsersDatabase database = new UsersDatabase();
+        List<Double> decimalValues = database.findDecimalImproperFractionByUserName("Ana")
+                .collect(Collectors.toList());
+
+        List<Double> expectedDecimalValues = List.of(2.0, 1.3333333333333333);
+        assertEquals(expectedDecimalValues, decimalValues);
+    }
 }

@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FractionTest {
 
+
     @Test
     void testConstructorWithArguments() {
         Fraction fraction = new Fraction(1, 2);

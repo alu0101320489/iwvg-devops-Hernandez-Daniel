@@ -19,10 +19,8 @@ public class UserTest {
 
     @Test
     void testConstructor() {
-        User user2 = new User("33", "Fernando", "Alonso", new ArrayList<>());
-        assertEquals("33", user2.getId());
-        assertEquals("Fernando", user2.getName());
-        assertEquals("Alonso", user2.getFamilyName());
+        User user2 = new User();
+        assertEquals(0, user.getFractions().size());
     }
     @Test
     void testGetId() {

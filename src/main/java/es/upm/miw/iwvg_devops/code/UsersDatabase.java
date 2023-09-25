@@ -64,4 +64,12 @@ public class UsersDatabase {
                 .map(User::getFamilyName)
                 .distinct();
     }
+
+    public Stream<Double> findDecimalImproperFractionByUserName(String name) {
+        return findAll()
+                .filter(user -> user.getName().equals(name))
+                .flatMap(user -> user.getFractions().stream())
+                .filter(Fraction::isImproper)
+                .map(Fraction::decimal);
+    }
 }

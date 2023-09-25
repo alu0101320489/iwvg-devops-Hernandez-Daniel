@@ -65,11 +65,11 @@ public class UsersDatabase {
                 .distinct();
     }
 
-    public Stream<Double> findDecimalImproperFractionByUserName(String name) {
+    public Stream<Double> findDecimalProperFractionByUserName(String name) {
         return findAll()
                 .filter(user -> user.getName().equals(name))
                 .flatMap(user -> user.getFractions().stream())
-                .filter(Fraction::isImproper)
+                .filter(Fraction::isProper)
                 .map(Fraction::decimal);
     }
     public Stream<String> findUserFamilyNameByAllNegativeSignFractionDistinct() {

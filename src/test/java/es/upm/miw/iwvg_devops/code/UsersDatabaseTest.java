@@ -29,10 +29,10 @@ public class UsersDatabaseTest {
     @Test
     void testFindDecimalImproperFractionByUserName() {
         UsersDatabase database = new UsersDatabase();
-        List<Double> decimalValues = database.findDecimalImproperFractionByUserName("Ana")
+        List<Double> decimalValues = database.findDecimalProperFractionByUserName("Ana")
                 .collect(Collectors.toList());
 
-        List<Double> expectedDecimalValues = List.of(2.0, 1.3333333333333333);
+        List<Double> expectedDecimalValues = List.of(-0.2, 0.5);
         assertEquals(expectedDecimalValues, decimalValues);
     }
 

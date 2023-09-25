@@ -1,6 +1,7 @@
 package es.upm.miw.iwvg_devops.code;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class UsersDatabase {
@@ -48,5 +49,33 @@ public class UsersDatabase {
                 new User("5", "Antonio", "Blanco", fractions5),
                 new User("6", "Paula", "Torres", fractions6)
         );
+    }
+
+    public Optional<Fraction> findFractionSubtractionByUserName(String name) {
+        return findAll()
+                .filter(user -> user.getName().equals(name))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce((fraction1, fraction2) -> fraction1.subtract(fraction2));
+    }
+
+    public Stream<String> findUserFamilyNameBySomeImproperFraction() {
+        return findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(Fraction::isImproper))
+                .map(User::getFamilyName)
+                .distinct();
+    }
+
+    public Stream<Double> findDecimalImproperFractionByUserName(String name) {
+        return findAll()
+                .filter(user -> user.getName().equals(name))
+                .flatMap(user -> user.getFractions().stream())
+                .filter(Fraction::isImproper)
+                .map(Fraction::decimal);
+    }
+    public Stream<String> findUserFamilyNameByAllNegativeSignFractionDistinct() {
+        return findAll()
+                .filter(user -> user.getFractions().stream().allMatch(fraction -> (fraction.getNumerator() < 0)||(fraction.getDenominator() < 0)))
+                .map(User::getFamilyName)
+                .distinct();
     }
 }

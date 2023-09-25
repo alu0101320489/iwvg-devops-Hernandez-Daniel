@@ -18,6 +18,11 @@ public class UserTest {
     }
 
     @Test
+    void testConstructor() {
+        User user2 = new User();
+        assertEquals(0, user.getFractions().size());
+    }
+    @Test
     void testGetId() {
         assertEquals("1", user.getId());
     }

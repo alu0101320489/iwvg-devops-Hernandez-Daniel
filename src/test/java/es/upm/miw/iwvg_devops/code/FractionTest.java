@@ -16,9 +16,8 @@ public class FractionTest {
     @Test
     void testDefaultConstructor() {
         Fraction fraction = new Fraction();
-        assertEquals(1, fraction.getDenominator());
         assertEquals(1, fraction.getNumerator());
-
+        assertEquals(1, fraction.getDenominator());
     }
 
     @Test
@@ -36,15 +35,15 @@ public class FractionTest {
     @Test
     void testSetNumerator() {
         Fraction fraction = new Fraction(2, 3);
-        fraction.setNumerator(5);
-        assertEquals(5, fraction.getNumerator());
+        fraction.setNumerator(1);
+        assertEquals(1, fraction.getNumerator());
     }
 
     @Test
     void testSetDenominator() {
         Fraction fraction = new Fraction(2, 3);
-        fraction.setDenominator(5);
-        assertEquals(5, fraction.getDenominator());
+        fraction.setDenominator(7);
+        assertEquals(7, fraction.getDenominator());
     }
 
     @Test
@@ -92,9 +91,9 @@ public class FractionTest {
     void testAdd() {
         Fraction fraction1 = new Fraction(5, 2);
         Fraction fraction2 = new Fraction(1, 3);
-        Fraction sum = fraction1.add(fraction2);
-        assertEquals(17, sum.getNumerator());
-        assertEquals(6, sum.getDenominator());
+        Fraction result = fraction1.add(fraction2);
+        assertEquals(17, result.getNumerator());
+        assertEquals(6, result.getDenominator());
     }
 
     @Test
@@ -110,9 +109,9 @@ public class FractionTest {
     void testMultiply() {
         Fraction fraction1 = new Fraction(3, 5);
         Fraction fraction2 = new Fraction(7, 2);
-        Fraction product = fraction1.multiply(fraction2);
-        assertEquals(21, product.getNumerator());
-        assertEquals(10, product.getDenominator());
+        Fraction result = fraction1.multiply(fraction2);
+        assertEquals(21, result.getNumerator());
+        assertEquals(10, result.getDenominator());
     }
 
     @Test

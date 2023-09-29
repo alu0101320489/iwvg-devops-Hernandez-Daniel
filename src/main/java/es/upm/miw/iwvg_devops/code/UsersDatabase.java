@@ -55,7 +55,7 @@ public class UsersDatabase {
         return findAll()
                 .filter(user -> user.getName().equals(name))
                 .flatMap(user -> user.getFractions().stream())
-                .reduce((fraction1, fraction2) -> fraction1.subtract(fraction2));
+                .reduce(Fraction::subtract);
     }
 
     public Stream<String> findUserFamilyNameBySomeImproperFraction() {

@@ -8,7 +8,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UserTest {
+class UserTest {
 
     private User user;
 
@@ -20,7 +20,7 @@ public class UserTest {
     @Test
     void testConstructor() {
         User user2 = new User();
-        assertEquals(0, user.getFractions().size());
+        assertEquals(0, user2.getFractions().size());
     }
     @Test
     void testGetId() {
